@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Entity
 data class Candidate (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    var id: Long = 0,
 
     var firstName: String,
 
@@ -16,5 +16,5 @@ data class Candidate (
 
     @OneToMany(mappedBy = "candidate", cascade = [CascadeType.REMOVE], fetch = FetchType.LAZY)
     @JsonManagedReference
-    var useTechnologies: Set<CandidateUseTechnology>
+    var useTechnologies: Set<CandidateUseTechnology> = HashSet()
 )

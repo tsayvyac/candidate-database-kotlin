@@ -8,8 +8,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CandidateTechnologyKey (
     @Column(name = "technology_id")
-    var technologyId: Long,
+    var technologyId: Long = 0,
 
     @Column(name = "candidate_id")
-    var candidateId: Long
+    var candidateId: Long = 0
 )

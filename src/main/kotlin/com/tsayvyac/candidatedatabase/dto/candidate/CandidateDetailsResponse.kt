@@ -4,6 +4,6 @@ data class CandidateDetailsResponse (
     var id: Long,
     var firstName: String,
     var lastName: String,
-    var age: Int,
+    var age: Int?,
     var useTechnologies: Set<TechnologyInfo>
 )

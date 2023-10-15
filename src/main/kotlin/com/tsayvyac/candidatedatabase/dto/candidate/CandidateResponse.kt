@@ -4,5 +4,5 @@ data class CandidateResponse (
     var id: Long,
     var firstName: String,
     var lastName: String,
-    var useTechnologies: List<CandidateTechnologyLevel>
+    var useTechnologies: Set<CandidateTechnologyLevel>
 )

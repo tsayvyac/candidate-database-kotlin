@@ -5,10 +5,10 @@ import jakarta.persistence.*
 @Entity
 data class Technology (
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    var id: Long = 0,
 
     var name: String,
 
     @OneToMany(mappedBy = "technology", cascade = [CascadeType.REMOVE], fetch = FetchType.LAZY)
-    var useTechnologies: Set<CandidateUseTechnology>
+    var useTechnologies: Set<CandidateUseTechnology> = HashSet()
 )
