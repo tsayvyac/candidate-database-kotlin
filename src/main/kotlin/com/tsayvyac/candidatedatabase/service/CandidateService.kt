@@ -12,7 +12,7 @@ interface CandidateService {
      * Deletes the candidate with ID from the database.
      * @param id ID of the candidate to be deleted.
      */
-    fun deleteCandidate(id: Long): Candidate
+    fun deleteCandidate(id: Long)
 
     /**
      * Updates the information of the candidate with ID using the provided candidate request data.

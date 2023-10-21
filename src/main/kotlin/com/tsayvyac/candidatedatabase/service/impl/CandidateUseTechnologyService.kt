@@ -22,13 +22,22 @@ class CandidateUseTechnologyService(
             val technology = technologyRepository.findByName(ctr.name)
             cutRepository.save(
                 CandidateUseTechnology(
-                    id = CandidateTechnologyKey(technology.id, candidate.id),
+                    id = CandidateTechnologyKey(technology?.id!!, candidate.id),
                     technology = technology,
                     candidate = candidate,
                     level = Helper.checkLevelBounds(ctr.level),
                     note = ctr.note
                 )
             )
+        }
+    }
+
+    fun updateCUT(key: CandidateTechnologyKey, ctr: CandidateTechnologyRequest) {
+        val cut = cutRepository.findById(key)
+        cut.ifPresent {candidateUseTechnology ->
+            candidateUseTechnology.level = Helper.checkLevelBounds(ctr.level)
+            candidateUseTechnology.note = ctr.note
+            cutRepository.save(candidateUseTechnology)
         }
     }
 }

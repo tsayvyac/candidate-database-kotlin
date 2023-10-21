@@ -11,7 +11,7 @@ interface TechnologyService {
      * Deletes the technology with ID from the database.
      * @param id ID of the technology to be deleted.
      */
-    fun deleteTechnology(id: Long): Technology
+    fun deleteTechnology(id: Long)
 
     /**
      * Updates the information of the technology with ID using the provided technology request data.
